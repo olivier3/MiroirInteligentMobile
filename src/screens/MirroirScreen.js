@@ -4,10 +4,8 @@ import AppTheme from '../styles/AppTheme';
 
 export default function MirroirScreen() {
   return (
-    <View style={styles.container}>
-      <View>
-
-      </View>
+    <View className="flex-1 items-center justify-center">
+      <Text>This is a tailwind test</Text>
     </View>
   );
 }
