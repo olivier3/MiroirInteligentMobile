@@ -8,9 +8,6 @@ module.exports = {
         'light_blue': '#83EEFF',
         'nord_black': '#2E3440',
       },
-      fontFamily: {
-        'archivo': ['Archivo Black', 'sans-serif'],
-      },
     },
   },
   plugins: [],
