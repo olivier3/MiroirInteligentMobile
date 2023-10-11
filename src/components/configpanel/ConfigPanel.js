@@ -1,9 +1,7 @@
-import { useState } from "react";
-import { Switch, Text, View } from "react-native";
-import DropDownPicker from "react-native-dropdown-picker";
-import AppTheme from "../../styles/AppTheme";
+import { View } from "react-native";
 import TimeMode from "./TimeMode";
 import Timezone from "./Timezones";
+import NightMode from "./NightMode";
 
 
 export default function ConfigPanel() {
@@ -12,6 +10,7 @@ export default function ConfigPanel() {
     <View className="h-full bg-nord_black">
       <TimeMode/>
       <Timezone/>
+      <NightMode/>
     </View>
   );
 }
