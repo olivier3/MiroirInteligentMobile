@@ -6,7 +6,6 @@ export default function NightMode() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-
       <View>
         <Text className="text-lg text-light_blue m-5">Heure mode nuit &#40; Kiosk seulement &#41;</Text>
         <View className="flex-row justify-between items-center mx-5 mb-5">
