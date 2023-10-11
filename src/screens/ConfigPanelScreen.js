@@ -1,8 +1,11 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
+import ConfigPanel from "../components/configpanel/ConfigPanel";
 
 export default function ConfigPanelScreen() {
 
   return(
-    <Text>This is the config panel</Text>
+    <View className="h-full bg-nord_black">
+      <ConfigPanel/>
+    </View>
   );
 }
