@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { Keyboard, Text, TextInput, TouchableWithoutFeedback, View } from "react-native";
 import { ConfigContext } from "../../contexts/ConfigContext";
 import useModal from "../../hooks/useModal";

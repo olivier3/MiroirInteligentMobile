@@ -31,7 +31,6 @@ const ConfigProvider = (props) => {
     showModal, setModalState
   };
 
-
   useEffect(() => {
     WsService.initWsConnection(setConfigHooks);
     loadConfig();
