@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
+import useModal from "../../hooks/useModal";
+import { ConfigContext } from "../../contexts/ConfigContext";
 
 
 export default function Timezone() {
@@ -8,8 +10,15 @@ export default function Timezone() {
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
     { label: 'Apple', value: 'apple' },
-    { label: 'Banana', value: 'banana' }
+    { label: 'us', value: 'US/Central' }
   ]);
+
+  const {updateTimezone} = useModal();
+  const {timezone, setTimezone} = useContext(ConfigContext);
+
+  useEffect(() => {
+    updateTimezone(timezone);
+  }, [timezone]);
 
   return (
     <View className="flex-row justify-between items-center m-5 z-10">
@@ -19,10 +28,10 @@ export default function Timezone() {
           className="border-light_blue"
           searchable={true}
           open={open}
-          value={value}
+          value={timezone}
           items={items}
           setOpen={setOpen}
-          setValue={setValue}
+          setValue={setTimezone}
           setItems={setItems} />
       </View>
     </View>

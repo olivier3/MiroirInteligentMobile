@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Keyboard, Text, TextInput, TouchableWithoutFeedback, View } from "react-native";
+import { ConfigContext } from "../../contexts/ConfigContext";
+import useModal from "../../hooks/useModal";
 
 
 export default function IdleMode() {
-  const [number, onChangeNumber] = useState('');
+  const {brightnessIdle} = useContext(ConfigContext);
+  const {updatebrightnessIdle} = useModal();
 
   return(
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -11,8 +14,8 @@ export default function IdleMode() {
           <Text className="text-lg text-light_blue">Temps mode inactif:</Text>
           <TextInput
             className="bg-white p-3 w-1/3 rounded-lg border-light_blue border-2"
-            onChangeText={onChangeNumber}
-            value={number}
+            onChangeText={updatebrightnessIdle}
+            value={brightnessIdle}
             placeholder="Idle timer"
             keyboardType="numeric"
           />

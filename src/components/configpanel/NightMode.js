@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Keyboard, Text, TextInput, TouchableWithoutFeedback, View } from "react-native";
+import useModal from "../../hooks/useModal";
+import { ConfigContext } from "../../contexts/ConfigContext";
 
 export default function NightMode() {
-  const [number, onChangeNumber] = useState('');
+  const {brightnessTimeStart,setBrightnessTimeStart, brightnessTimeEnd, setBrightnessTimeEnd} = useContext(ConfigContext);
+  const {updateValueSliderStart, updateValueSliderEnd} = useModal();
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -12,8 +15,8 @@ export default function NightMode() {
           <Text className="text-lg text-light_blue">Début:</Text>
           <TextInput
             className="bg-white p-3 w-1/3 rounded-lg border-light_blue border-2"
-            onChangeText={onChangeNumber}
-            value={number}
+            onChangeText={updateValueSliderStart}
+            value={brightnessTimeStart}
             placeholder="Start time"
             keyboardType="numeric"
           />
@@ -22,8 +25,8 @@ export default function NightMode() {
           <Text className="text-lg text-light_blue">Fin:</Text>
           <TextInput
             className="bg-white p-3 w-1/3 rounded-lg border-light_blue border-2"
-            onChangeText={onChangeNumber}
-            value={number}
+            onChangeText={updateValueSliderEnd}
+            value={brightnessTimeEnd}
             placeholder="End time"
             keyboardType="numeric"
           />
