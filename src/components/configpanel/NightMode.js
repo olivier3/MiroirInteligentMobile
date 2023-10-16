@@ -5,7 +5,7 @@ import { ConfigContext } from "../../contexts/ConfigContext";
 import Slider from "@react-native-community/slider";
 
 export default function NightMode() {
-  const { brightnessTimeStart, setBrightnessTimeStart, brightnessTimeEnd, setBrightnessTimeEnd } = useContext(ConfigContext);
+  const { brightnessTimeStart, brightnessTimeEnd } = useContext(ConfigContext);
   const { updateValueSliderStart, updateValueSliderEnd } = useModal();
 
   const [timeStartValue, setTimeStart] = useState(brightnessTimeStart);
@@ -26,7 +26,6 @@ export default function NightMode() {
           value={brightnessTimeStart / 100}
         />
       </View>
-
       <View className="flex-row justify-between items-center m-5">
         <Text className="text-lg text-light_blue">Fin:</Text>
         <Text className="text-lg text-light_blue">{timeEndValue}</Text>
