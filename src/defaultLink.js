@@ -1,3 +1,3 @@
 export const defaultLink = {
-  "api" : "http://10.0.0.89:8080/"
+  "api" : "http://172.20.32.1:8080/"
 }

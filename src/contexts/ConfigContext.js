@@ -32,8 +32,8 @@ const ConfigProvider = (props) => {
   };
 
   useEffect(() => {
-    WsService.initWsConnection(setConfigHooks);
-    loadConfig();
+    //WsService.initWsConnection(setConfigHooks);
+    //loadConfig();
   }, []);
 
   const loadConfig = useCallback(() => {
