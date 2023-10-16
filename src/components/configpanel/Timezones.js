@@ -3,18 +3,13 @@ import { Text, View } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import useModal from "../../hooks/useModal";
 import { ConfigContext } from "../../contexts/ConfigContext";
-
+import { timezonesList } from "../../utils/timezonesList";
 
 export default function Timezone() {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
-  const [items, setItems] = useState([
-    { label: 'Apple', value: 'apple' },
-    { label: 'us', value: 'US/Central' }
-  ]);
 
-  const {updateTimezone} = useModal();
-  const {timezone, setTimezone} = useContext(ConfigContext);
+  const { updateTimezone } = useModal();
+  const { timezone, setTimezone } = useContext(ConfigContext);
 
   useEffect(() => {
     updateTimezone(timezone);
@@ -29,10 +24,10 @@ export default function Timezone() {
           searchable={true}
           open={open}
           value={timezone}
-          items={items}
+          items={timezonesList}
           setOpen={setOpen}
           setValue={setTimezone}
-          setItems={setItems} />
+        />
       </View>
     </View>
   );

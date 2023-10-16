@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/slider": "^4.4.3",
     "@react-navigation/bottom-tabs": "^6.5.9",
     "@react-navigation/native": "^6.1.8",
     "@react-navigation/native-stack": "^6.9.14",
@@ -29,7 +30,8 @@
     "tailwindcss": "3.3.2",
     "text-encoding": "^0.7.0",
     "websocket": "^1.0.34",
-    "ws": "^8.14.2"
+    "ws": "^8.14.2",
+    "miroirPackage": "git+http://bitbucket.cstjean.qc.ca:7990/scm/a23-multi-bll/miroirpackage.git#semver:^2.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
