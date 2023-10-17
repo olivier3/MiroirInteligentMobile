@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import AppTheme from "../../styles/AppTheme";
 import { useContext } from "react";
-import { ConfigContext } from "../../contexts/ConfigContext";
+import { ConfigContext } from "miroirPackage/Contexts/ConfigContext";
 
 
 export default function Hour(props) {
@@ -33,6 +33,7 @@ export default function Hour(props) {
 
 const styles = StyleSheet.create({
   shadow: {
+    backgroundColor: AppTheme.backgroundColor,
     shadowColor: AppTheme.textColor,
     shadowOffset: { width: 5, height: 5 },
     shadowOpacity: 1,

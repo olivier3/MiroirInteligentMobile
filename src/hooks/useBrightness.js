@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { startTimer, resetTimer } from "../brightness";
 import Brightness from "../brightness";
-import { ConfigContext } from "../contexts/ConfigContext";
+import { ConfigContext } from "miroirPackage/Contexts/ConfigContext";
 
 export default function useBrightness() {
   const [opacity, setOpacity] = useState("0");
