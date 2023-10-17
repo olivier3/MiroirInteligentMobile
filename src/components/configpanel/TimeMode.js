@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Switch, Text, View } from "react-native";
-import { ConfigContext } from "../../contexts/ConfigContext";
-import useModal from "../../hooks/useModal";
+import { ConfigContext } from "miroirPackage/Contexts/ConfigContext";
+import useModal from "miroirPackage/Hooks/UseModal";
 
 export default function TimeMode() {
   const {is12h} = useContext(ConfigContext);

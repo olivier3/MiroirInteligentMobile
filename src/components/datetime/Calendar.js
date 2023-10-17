@@ -24,6 +24,7 @@ export default function Calendar(props) {
 
 const styles = StyleSheet.create({
   shadow: {
+    backgroundColor: AppTheme.backgroundColor,
     shadowColor: AppTheme.textColor,
     shadowOffset: { width: 5, height: 5 },
     shadowOpacity: 1,

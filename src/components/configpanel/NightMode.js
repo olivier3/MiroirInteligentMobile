@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import { Keyboard, Text, TouchableWithoutFeedback, View } from "react-native";
-import useModal from "../../hooks/useModal";
-import { ConfigContext } from "../../contexts/ConfigContext";
+import {Text, View } from "react-native";
+import useModal from "miroirPackage/Hooks/UseModal";
+import { ConfigContext } from "miroirPackage/Contexts/ConfigContext";
 import Slider from "@react-native-community/slider";
 
 export default function NightMode() {

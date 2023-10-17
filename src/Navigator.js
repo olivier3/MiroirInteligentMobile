@@ -7,12 +7,25 @@ import { StatusBar, View } from 'react-native';
 import useBrightness from './hooks/useBrightness';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useEffect, useContext } from 'react';
+import { ConfigContext } from 'miroirPackage/Contexts/ConfigContext';
+import ApiCall from 'miroirPackage/Api/ApiCall';
+import {defaultLink} from './defaultLink'
+import WebSocket from 'miroirPackage/WebSocket/WebSocket';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
 
   const { handleTouchStart, opacity } = useBrightness();
+
+  const {InitConnection} = useContext(ConfigContext);
+
+  useEffect(() => {
+    ApiCall.setUrl(defaultLink.api);
+    WebSocket.setUrl(defaultLink.api);
+    InitConnection();
+  }, []);
 
   return (
     <NavigationContainer>
@@ -56,6 +69,7 @@ let screenOptions = {
     backgroundColor: AppTheme.backColor,
   },
   headerTitleStyle: {
+    backgroundColor: AppTheme.backColor,
     color: AppTheme.textColor,
   },
   tabBarStyle: {

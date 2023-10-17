@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import AppTheme from '../styles/AppTheme';
 import Hour from '../components/datetime/Hour';
 import Calendar from '../components/datetime/Calendar';
-import useDateTime from '../hooks/useDateTime';
+import useDateTime from 'miroirPackage/Hooks/UseDateTime'
 
 export default function MirroirScreen() {
 
