@@ -38,5 +38,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 5, height: 5 },
     shadowOpacity: 1,
     shadowRadius: 10,
+    paddingRight: 30,
   },
 });
