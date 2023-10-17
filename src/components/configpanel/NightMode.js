@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {Text, View } from "react-native";
 import useModal from "miroirPackage/Hooks/UseModal";
 import { ConfigContext } from "miroirPackage/Contexts/ConfigContext";
@@ -10,6 +10,11 @@ export default function NightMode() {
 
   const [timeStartValue, setTimeStart] = useState(brightnessTimeStart);
   const [timeEndValue, setTimeEnd] = useState(brightnessTimeEnd);
+
+  useEffect(() => {
+    setTimeStart(brightnessTimeStart);
+    setTimeEnd(brightnessTimeEnd);
+  }, [brightnessTimeStart, brightnessTimeEnd])
 
   return (
     <View>
