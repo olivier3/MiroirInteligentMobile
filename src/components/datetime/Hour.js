@@ -34,10 +34,6 @@ export default function Hour(props) {
 const styles = StyleSheet.create({
   shadow: {
     backgroundColor: AppTheme.backgroundColor,
-    shadowColor: AppTheme.textColor,
-    shadowOffset: { width: 5, height: 5 },
-    shadowOpacity: 1,
-    shadowRadius: 10,
     paddingRight: 30,
   },
 });
