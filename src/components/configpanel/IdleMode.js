@@ -9,7 +9,7 @@ export default function IdleMode() {
   const {updatebrightnessIdle} = useModal();
 
   return(
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <View>
       <View className="flex-row justify-between items-center m-5">
           <Text className="text-lg text-light_blue">Temps mode inactif:</Text>
           <TextInput
@@ -20,6 +20,6 @@ export default function IdleMode() {
             keyboardType="numeric"
           />
         </View>
-    </TouchableWithoutFeedback>
+    </View>
   );
 }
