@@ -5,6 +5,7 @@ import TimeMode from "./TimeMode";
 import Timezone from "./Timezones";
 import NightMode from "./NightMode";
 import IdleMode from "./IdleMode";
+import CityWeather from "./CityWeather";
 
 
 export default function ConfigPanel() {
@@ -12,6 +13,7 @@ export default function ConfigPanel() {
     <Pressable className="h-full bg-nord_black" onPressIn={Keyboard.dismiss}>
       <TimeMode/>
       <Timezone/>
+      <CityWeather/>
       <NightMode/>
       <IdleMode/>
     </Pressable>
