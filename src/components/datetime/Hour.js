@@ -11,29 +11,22 @@ export default function Hour(props) {
   const seconds=  props.date.getSeconds()
 
   return (
-    <View style={styles.shadow}>
-      <Text className="text-2xl text-light_blue">
+    <View className='flex-row justify-end'>
+      <Text className="text-2xl text-white">
         {hours < 10 ? '0' : ''}
-        {hours}
+        {hours + ":"}
       </Text>
 
-      <Text className="text-2xl text-light_blue">
+      <Text className="text-2xl text-white">
         {minutes < 10 ? '0': ''}
-        {minutes}
+        {minutes + ":"}
       </Text>
 
-      <Text className="text-2xl text-light_blue">
+      <Text className="text-2xl text-white">
         {seconds < 10 ? '0': ''}
         {seconds}
       </Text>
-      <Text className="text-1xl text-light_blue">{is12h ? hours < 12 ? 'AM' : 'PM' : ''}</Text>
+      <Text className="text-2xl ml-2 text-white">{is12h ? hours < 12 ? 'AM' : 'PM' : ''}</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  shadow: {
-    backgroundColor: AppTheme.backgroundColor,
-    paddingRight: 30,
-  },
-});

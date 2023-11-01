@@ -9,7 +9,7 @@ export default function TimeMode() {
 
   return (
     <View className="flex-row justify-between items-center m-5">
-      <Text className="text-lg text-light_blue">Affichage de l'heure: 12h</Text>
+      <Text className="text-lg text-white">Affichage de l'heure: 12h</Text>
       <Switch
         trackColor={{ false: '#767577', true: '#81b0ff' }}
         ios_backgroundColor="#3e3e3e"

@@ -11,7 +11,7 @@ export default function IdleMode() {
   return(
     <View>
       <View className="flex-row justify-between items-center m-5">
-          <Text className="text-lg text-light_blue">Temps mode inactif:</Text>
+          <Text className="text-lg text-white">Temps mode inactif:</Text>
           <TextInput
             className="bg-white p-3 w-1/3 rounded-lg border-light_blue border-2"
             onChangeText={updatebrightnessIdle}
