@@ -6,11 +6,11 @@ export default function Weather() {
   const { weather } = useWeather();
 
   return (
-    <View>
-      {weather.temperature != null ? <Text>{weather.temperature} °C</Text> : <Text>MÉTÉO NON DISPONIBLE</Text>}
+    <View className='flex-row items-center'>
+      {weather.temperature != null ? <Text className="text-white">{weather.temperature} °C</Text> : <Text className="text-white">MÉTÉO NON DISPONIBLE</Text>}
       {weather.iconID != null ?
         <Image
-          className="h-20 w-20"
+          className="h-14 w-14"
           source={{ uri: `https://openweathermap.org/img/wn/${weather.iconID}@2x.png` }}
         /> : null
       }

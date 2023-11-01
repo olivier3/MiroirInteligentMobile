@@ -11,12 +11,12 @@ export default function Calendar(props) {
   const year = props.date.getFullYear();
 
   return (
-    <View style={styles.shadow} className="border-light_blue border-2">
-      <View className="p-4 flex flex-col items-center">
-        <Text className="text-3xl text-light_blue">{dayOfTheWeek}</Text>
-        <Text className="text-2xl text-light_blue">{date}</Text>
-        <Text className="text-2xl text-light_blue">{month}</Text>
-        <Text className="text-1xl text-light_blue">{year}</Text>
+    <View style={styles.shadow} className="">
+      <View className="pt-2 flex-row items-center">
+        <Text className="text-2xl text-white">{dayOfTheWeek + ", "}</Text>
+        <Text className="text-2xl text-white">{date + "/"}</Text>
+        <Text className="text-2xl text-white">{month + "/"}</Text>
+        <Text className="text-2xl text-white">{year}</Text>
       </View>
     </View>
   );

@@ -35,14 +35,14 @@ export default function App() {
             name="Mirroir"
             component={MirroirScreen}
             options={{
-              tabBarIcon: () => (<MaterialCommunityIcons name='mirror' color={AppTheme.textColor} size={25} />)
+              tabBarIcon: () => (<MaterialCommunityIcons name='mirror' color="white" size={25} />)
             }}
           />
           <Tab.Screen
             name="Config"
             component={ConfigPanelScreen}
             options={{
-              tabBarIcon: () => (<Ionicons name='options' color={AppTheme.textColor} size={25} />)
+              tabBarIcon: () => (<Ionicons name='options' color="white" size={25} />)
             }}
           />
         </Tab.Navigator>
@@ -70,10 +70,10 @@ let screenOptions = {
   },
   headerTitleStyle: {
     backgroundColor: AppTheme.backColor,
-    color: AppTheme.textColor,
+    color: "white",
   },
   tabBarStyle: {
     backgroundColor: AppTheme.backColor,
-    color: AppTheme.textColor
+    color: "white"
   }
 };

@@ -17,7 +17,7 @@ export default function Timezone() {
 
   return (
     <View className="flex-row justify-between items-center m-5 z-10">
-      <Text className="text-lg text-light_blue">Fuseau horaire:</Text>
+      <Text className="text-lg text-white">Fuseau horaire:</Text>
       <View className="w-1/2">
         <DropDownPicker
           className="border-light_blue"

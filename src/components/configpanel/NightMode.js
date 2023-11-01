@@ -18,10 +18,10 @@ export default function NightMode() {
 
   return (
     <View>
-      <Text className="text-lg text-light_blue m-5">Heure mode nuit &#40; Kiosk seulement &#41;</Text>
+      <Text className="text-lg text-white m-5">Heure mode nuit &#40; Kiosk seulement &#41;</Text>
       <View className="flex-row justify-between items-center mx-5 mb-5">
-        <Text className="text-lg text-light_blue">Début:</Text>
-        <Text className="text-lg text-light_blue">{timeStartValue}</Text>
+        <Text className="text-lg text-white">Début:</Text>
+        <Text className="text-lg text-white">{timeStartValue}</Text>
         <Slider
           style={{ width: '70%' }}
           onValueChange={e => setTimeStart(Math.round(e * 100))}
@@ -32,8 +32,8 @@ export default function NightMode() {
         />
       </View>
       <View className="flex-row justify-between items-center m-5">
-        <Text className="text-lg text-light_blue">Fin:</Text>
-        <Text className="text-lg text-light_blue">{timeEndValue}</Text>
+        <Text className="text-lg text-white">Fin:</Text>
+        <Text className="text-lg text-white">{timeEndValue}</Text>
         <Slider
           style={{ width: '70%' }}
           onValueChange={e => setTimeEnd(Math.round(e * 100))}

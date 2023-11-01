@@ -14,10 +14,12 @@ export default function MirroirScreen() {
     <View style={styles.background}>
       <NoConnection />
 
-      <View className="flex-1 flex-row justify-center items-center" >
-        <Hour className="flex-2" date={date}/>
-        <Calendar className="flex-2" date={date}/>
-        <Weather className="flex-2"/>
+      <View className="flex-col items-end p-2" >
+        <View className="border-b-2 border-white">
+          <Hour className="" date={date}/>
+          <Calendar className="" date={date}/>
+        </View>
+        <Weather className=""/>
       </View>
     </View>
   );

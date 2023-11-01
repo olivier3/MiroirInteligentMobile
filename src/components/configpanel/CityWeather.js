@@ -17,7 +17,7 @@ export default function CityWeather() {
 
   return (
     <View className="flex-row justify-between items-center m-5 z-10">
-      <Text className="text-lg text-light_blue">Météo</Text>
+      <Text className="text-lg text-white">Météo</Text>
       <View className="w-1/2">
         <DropDownPicker
           className="border-light_blue"
