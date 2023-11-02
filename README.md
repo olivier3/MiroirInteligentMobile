@@ -18,7 +18,7 @@ Ouvrez le fichier `defaultLink.js` et modifier le code avec le code ci-dessous e
 
 ```javascript
 export const defaultLink = {
-  "api" : "http://localhost:8080/"
+  "api" : "http://localhost:80/"
 }
 ```
 
@@ -36,8 +36,8 @@ Vous pouvez aussi lancer le projet via expo directement:
 
 ## Lien répertoire Git
 
-Liens Bitbucket: <http://bitbucket.cstjean.qc.ca:7990/projects/A23-MULTI-BLL>
+Liens Bitbucket: <http://bitbucket.cstjean.qc.ca:7990/scm/a23-multi-bll/miroirmobile.git>
 
 ## Schema du projet
 
-![Schema projet mirroir](./assets/schema_projet.png)
+![Schema projet mirroir](./assets/schema-projet.png)
