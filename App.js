@@ -5,13 +5,13 @@ import * as encoding from 'text-encoding';
 import ConfigProvider from 'miroirPackage/Contexts/ConfigContext';
 import { useState } from 'react';
 import LogInScreen from './src/screens/LogInScreen';
+import Main from './src/components/Main';
 
 export default function App() {
-  const [isLogged, setIsLogged] = useState(false);
 
   return (
     <ConfigProvider>
-      {isLogged ? <Navigator /> : <LogInScreen setIsLogged={setIsLogged}/>}
+      <Main/>
     </ConfigProvider>
   );
 };
