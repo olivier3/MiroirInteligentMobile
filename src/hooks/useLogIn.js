@@ -30,13 +30,11 @@ export default function useLogin() {
 
     if (emailValidation === true && pwdValidation === true) {
       const url = ApiCall.getUrl();
-      console.log(url);
-      setIsLogged(true);
-      /*axios.post(`${url}/auth/login`).then(res => {
+      axios.post(`${url}/auth/login`).then(res => {
         if (res.status === 200) {
           setIsLogged(true);
         }
-      });*/
+      });
     } else {
       setIsValid(false);
     }
