@@ -2,7 +2,7 @@ import { SafeAreaView, View } from "react-native";
 import Navigator from '../Navigator'
 import { useContext } from "react";
 import { ConfigContext } from "miroirPackage/Contexts/ConfigContext";
-import LogInScreen from "../screens/LogInScreen";
+import LoginScreen from "../screens/LoginScreen";
 
 export default function Main() {
   const { isLogged } = useContext(ConfigContext);
@@ -13,7 +13,7 @@ export default function Main() {
     );
   } else {
     return (
-      <LogInScreen />
+      <LoginScreen />
     );
   }
 
