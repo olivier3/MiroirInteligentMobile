@@ -16,7 +16,7 @@ export default function AuthCodeScreen() {
   return (
     <Pressable className="h-full w-full" onPress={Keyboard.dismiss}>
       <View className="bg-nord_black h-full justify-center items-center">
-        <Text >Verification</Text>
+        <Text className="font-bold text-white text-lg">Code d'authentification</Text>
         <CodeField
           ref={ref}
           {...props}
@@ -36,11 +36,14 @@ export default function AuthCodeScreen() {
             </Text>
           )}
         />
-        <Button
-          title="Lier au miroir"
-        />
+        <View className="mt-5 rounded bg-white">
+          <Button
+            title="Lier au miroir"
+
+          />
+        </View>
       </View>
-    </Pressable>
+    </Pressable >
   );
 }
 
@@ -53,10 +56,11 @@ const styles = StyleSheet.create({
     lineHeight: 38,
     fontSize: 24,
     borderWidth: 2,
-    borderColor: '#00000030',
+    borderColor: 'white',
     textAlign: 'center',
+    color: 'white',
   },
   focusCell: {
-    borderColor: '#000',
+    borderColor: '#83EEFF',
   },
 });
