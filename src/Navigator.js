@@ -12,6 +12,7 @@ import { ConfigContext } from 'miroirPackage/Contexts/ConfigContext';
 import ApiCall from 'miroirPackage/Api/ApiCall';
 import {defaultLink} from './defaultLink'
 import WebSocket from 'miroirPackage/WebSocket/WebSocket';
+import AuthCodeScreen from './screens/AuthCodeScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,6 +32,13 @@ export default function App() {
     <NavigationContainer>
       <View style={{ flex: 1, backgroundColor: 'black' }} onTouchStart={handleTouchStart}>
         <Tab.Navigator screenOptions={screenOptions}>
+        <Tab.Screen
+            name="Link"
+            component={AuthCodeScreen}
+            options={{
+              tabBarIcon: () => (<MaterialCommunityIcons name='mirror' color="white" size={25} />)
+            }}
+          />
           <Tab.Screen
             name="Mirroir"
             component={MirroirScreen}
