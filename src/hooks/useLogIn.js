@@ -12,6 +12,7 @@ export default function useLogin() {
   const [pwd, setPwd] = useState('');
   const [isValid, setIsValid] = useState(true);
   const { setIsLogged } = useContext(ConfigContext);
+  const { setToken } = useContext(ConfigContext);
 
   let emailValidation = false;
   let pwdValidation = false;
@@ -30,8 +31,15 @@ export default function useLogin() {
 
     if (emailValidation === true && pwdValidation === true) {
       const url = ApiCall.getUrl();
-      axios.post(`${url}/auth/login`).then(res => {
+
+      const loginInfo = {
+        "email": email,
+        "password": pwd,
+      }
+
+      axios.post(`http://10.0.0.90:9888/auth/login`, loginInfo).then(res => {
         if (res.status === 200) {
+          setToken(res.data.token)
           setIsLogged(true);
         }
       });
