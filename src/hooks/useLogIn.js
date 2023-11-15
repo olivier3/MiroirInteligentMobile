@@ -1,6 +1,7 @@
 import axios from "axios";
 import ApiCall from "miroirPackage/Api/ApiCall";
 import { ConfigContext } from "miroirPackage/Contexts/ConfigContext";
+import WebSocket from "miroirPackage/WebSocket/WebSocket";
 import { useContext, useState } from "react";
 
 /**
@@ -12,7 +13,7 @@ export default function useLogin() {
   const [pwd, setPwd] = useState('');
   const [isValid, setIsValid] = useState(true);
   const { setIsLogged } = useContext(ConfigContext);
-  const { setToken } = useContext(ConfigContext);
+  const { setLoginCredentials } = useContext(ConfigContext);
 
   let emailValidation = false;
   let pwdValidation = false;
@@ -37,11 +38,22 @@ export default function useLogin() {
         "password": pwd,
       }
 
-      console.log("Adresse IP local: " + url)
 
       axios.post(`${url}auth/login`, loginInfo).then(res => {
+
+        console.log(`HTTP status ${res.status}`)
+
         if (res.status === 200) {
-          setToken(res.data);
+
+          const credentials = {
+            "userId": res.data.user_id,
+            "token": res.data.token,
+          }
+
+          setLoginCredentials(credentials);
+          ApiCall.setUserId(credentials.userId);
+          WebSocket.setUserId(credentials.userId);
+          WebSocket.setSendUrl(`/app/sendToUser/${credentials.userId}`);
           setIsLogged(true);
         }
       });
