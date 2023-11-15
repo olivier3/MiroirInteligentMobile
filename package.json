@@ -17,7 +17,7 @@
     "axios": "^1.5.1",
     "expo": "~49.0.13",
     "expo-status-bar": "~1.6.0",
-    "miroirPackage": "git+http://bitbucket.cstjean.qc.ca:7990/scm/a23-multi-bll/miroirpackage.git#semver:^3.2.7",
+    "miroirPackage": "git+http://bitbucket.cstjean.qc.ca:7990/scm/a23-multi-bll/miroirpackage.git#semver:^3.6.0",
     "moment-timezone": "^0.5.43",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
