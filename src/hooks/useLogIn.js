@@ -37,9 +37,11 @@ export default function useLogin() {
         "password": pwd,
       }
 
-      axios.post(`http://10.0.0.90:9888/auth/login`, loginInfo).then(res => {
+      console.log("Adresse IP local: " + url)
+
+      axios.post(`${url}auth/login`, loginInfo).then(res => {
         if (res.status === 200) {
-          setToken(res.data.token)
+          setToken(res.data);
           setIsLogged(true);
         }
       });
