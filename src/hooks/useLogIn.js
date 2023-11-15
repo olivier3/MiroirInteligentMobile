@@ -54,6 +54,7 @@ export default function useLogin() {
           ApiCall.setUserId(credentials.userId);
           WebSocket.setUserId(credentials.userId);
           WebSocket.setSendUrl(`/app/sendToUser/${credentials.userId}`);
+          WebSocket.setSubUrl(`/user/${credentials.userId}/queue/private`);
           setIsLogged(true);
         }
       });
