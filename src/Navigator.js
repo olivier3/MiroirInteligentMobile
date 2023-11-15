@@ -10,8 +10,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useEffect, useContext } from 'react';
 import { ConfigContext } from 'miroirPackage/Contexts/ConfigContext';
 import ApiCall from 'miroirPackage/Api/ApiCall';
-import {defaultLink} from './defaultLink'
+import { defaultLink } from './defaultLink'
 import WebSocket from 'miroirPackage/WebSocket/WebSocket';
+import AuthCodeScreen from './screens/AuthCodeScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +20,7 @@ export default function App() {
 
   const { handleTouchStart, opacity } = useBrightness();
 
-  const {InitConnection} = useContext(ConfigContext);
+  const { InitConnection } = useContext(ConfigContext);
 
   useEffect(() => {
     ApiCall.setUrl(defaultLink.api);
@@ -30,7 +31,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={{ flex: 1, backgroundColor: 'black' }} onTouchStart={handleTouchStart}>
-        <Tab.Navigator screenOptions={screenOptions}>
+        <Tab.Navigator
+          screenOptions={screenOptions}
+          initialRouteName='Mirroir'>
+          <Tab.Screen
+            name="Link"
+            component={AuthCodeScreen}
+            options={{
+              tabBarIcon: () => (<MaterialCommunityIcons name='connection' color="white" size={25} />)
+            }}
+          />
           <Tab.Screen
             name="Mirroir"
             component={MirroirScreen}

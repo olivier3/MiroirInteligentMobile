@@ -8,7 +8,7 @@ export default function App() {
 
   return (
     <ConfigProvider>
-    <Navigator />
+      <Navigator />
     </ConfigProvider>
   );
 };
