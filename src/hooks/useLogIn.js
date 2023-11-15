@@ -41,8 +41,6 @@ export default function useLogin() {
 
       axios.post(`${url}auth/login`, loginInfo).then(res => {
 
-        console.log(`HTTP status ${res.status}`)
-
         if (res.status === 200) {
 
           const credentials = {
