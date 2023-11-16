@@ -1,10 +1,11 @@
-import { Button, Text, TextInput, View } from "react-native";
+import { Button, Text, TextInput, View, TouchableWithoutFeedback, Keyboard } from "react-native";
 import useLogin from "../hooks/useLogIn";
 
 
 export default function LoginScreen() {
   const { isValid, setEmail, setPwd, handleSubmit } = useLogin();
   return (
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()} accessible={false}>
     <View className="bg-nord_black h-full justify-center items-center">
       <Text className="w-1/2 text-center text-lg text-white font-bold">Connexion</Text>
       <TextInput
@@ -29,5 +30,6 @@ export default function LoginScreen() {
         />
       </View>
     </View>
+    </TouchableWithoutFeedback>
   );
 }
