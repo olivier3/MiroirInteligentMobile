@@ -23,8 +23,6 @@ export default function App() {
   const { InitConnection } = useContext(ConfigContext);
 
   useEffect(() => {
-    ApiCall.setUrl(defaultLink.api);
-    WebSocket.setUrl(defaultLink.api);
     InitConnection();
   }, []);
 

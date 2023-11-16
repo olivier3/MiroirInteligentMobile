@@ -26,17 +26,14 @@ export default function AuthCodeScreen() {
       "id": code,
     }
 
-    axios.post(`${url}auth/destopLogin`, loginCode, {
+    axios.post(`${url}auth/desktopLogin`, loginCode, {
       headers: {
-        'Authorization': `Basic ${loginCredentials.token}`
+        'Authorization': `Bearer ${loginCredentials.token}`
       }
     }).then(res => {
       if (res.status === 200) {
         setMessage("Le miroir est connecté")
         setLinked(true);
-      } else {
-        setMessage(`${res.data.error}`);
-        console.log(`${res.status} ${res.data.error}`);
       }
     });
   }
