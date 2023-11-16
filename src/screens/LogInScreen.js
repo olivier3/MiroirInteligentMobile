@@ -2,7 +2,7 @@ import { Button, Text, TextInput, View } from "react-native";
 import useLogin from "../hooks/useLogIn";
 
 
-export default function LogInScreen() {
+export default function LoginScreen() {
   const { isValid, setEmail, setPwd, handleSubmit } = useLogin();
   return (
     <View className="bg-nord_black h-full justify-center items-center">
