@@ -9,14 +9,13 @@ import { useContext, useState } from "react";
  * @returns {Objects} isValid: Boolean value for user validation, setEmail, setPwd, handleSubmit
  */
 export default function useLogin() {
-  const [email, setEmail] = useState('');
-  const [pwd, setPwd] = useState('');
+  const [email, setEmail] = useState("");
+  const [pwd, setPwd] = useState("");
   const [isValid, setIsValid] = useState(true);
   const { setIsLogged } = useContext(ConfigContext);
   const { setLoginCredentials } = useContext(ConfigContext);
 
   let emailValidation = false;
-  let pwdValidation = false;
 
   /**
    * Function that handle the submit of a login
@@ -26,27 +25,23 @@ export default function useLogin() {
       emailValidation = true;
     }
 
-    if (/^\S{7,}$/.test(pwd)) {
-      pwdValidation = true;
-    }
+    
 
-    if (emailValidation === true && pwdValidation === true) {
+
+    if (emailValidation) {
       const url = ApiCall.getUrl();
 
       const loginInfo = {
-        "email": email,
-        "password": pwd,
-      }
+        email: email,
+        password: pwd,
+      };
 
-
-      axios.post(`${url}auth/login`, loginInfo).then(res => {
-
+      axios.post(`${url}auth/login`, loginInfo).then((res) => {
         if (res.status === 200) {
-
           const credentials = {
-            "userId": res.data.user_id,
-            "token": res.data.token,
-          }
+            userId: res.data.user_id,
+            token: res.data.token,
+          };
 
           setLoginCredentials(credentials);
           ApiCall.setUserId(credentials.userId);
@@ -59,7 +54,7 @@ export default function useLogin() {
     } else {
       setIsValid(false);
     }
-  }
+  };
 
-  return { isValid, setEmail, setPwd, handleSubmit }
+  return { isValid, setEmail, setPwd, handleSubmit };
 }
