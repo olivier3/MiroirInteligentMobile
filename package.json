@@ -34,7 +34,7 @@
     "text-encoding": "^0.7.0",
     "websocket": "^1.0.34",
     "ws": "^8.14.2",
-    "miroirPackage": "git+http://bitbucket.cstjean.qc.ca:7990/scm/a23-multi-bll/miroirpackage.git#semver:^3.6.0",
+    "miroirPackage": "git+http://bitbucket.cstjean.qc.ca:7990/scm/a23-multi-bll/miroirpackage.git#semver:^3.6.2",
     "react-native-svg": "13.9.0"
   },
   "devDependencies": {
